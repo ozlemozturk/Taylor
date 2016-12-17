@@ -17,10 +17,7 @@ double Taylorsine(double x, int m){
     for(i=0; i<=m; i++){
         taylor += pow(-1, (i+1))*pow(x, 2i+1)/fact(2i+1);
     }
-    
-    
-    return taylor;
-    
+    return taylor; 
 }
 
 int main(){
@@ -33,12 +30,9 @@ int main(){
     scanf("%d",&n);
     interval = (PI/2)/n;
     printf ("aralık uzunlugu:%lf\n",interval);
-   printf("hata toleransını giriniz: \n");
+    printf("hata toleransını giriniz: \n");
     scanf("%lf",&tol);
     double taylor;
-   
-    
-    
     
     for(dx= -PI/4; dx<= PI/4; dx = dx + interval){
         printf("dx: %lf \n", dx);
@@ -50,12 +44,7 @@ int main(){
         taylor =Taylorsine(dx, n)-sin(dx);
       
         while (taylor < tol)
-            printf("error degeri:%lf\n",taylor++);
-        
-        
-    }
-    
-    
-    
+            printf("error degeri:%lf\n",taylor++);   
+    }  
     return 0;
 }
